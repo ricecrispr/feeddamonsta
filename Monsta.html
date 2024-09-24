@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Egg Hatching</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #d7f5e0; /* Soft neutral green */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .monster-image {
+      flex: 1; /* Take remaining space for the image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #egg-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: 300px; /* Set width for image */
+    }
+    .controls {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 250px; /* Fixed width for control box */
+      margin-left: 20px;
+    }
+    .connect-btn, .contribute-btn {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      width: 100%; /* Full width buttons */
+      margin-top: 10px;
+    }
+    .eth-amount {
+      padding: 10px;
+      margin: 20px 0;
+      display: block;
+      font-size: 16px;
+      width: 100%; /* Full width input */
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .info {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="monster-image">
+      <img id="egg-image" src="images/egg.png" alt="Egg Image" /> <!-- Default Egg Image -->
+    </div>
+
+    <div class="controls">
+      <button class="connect-btn" id="connectWallet">Connect Wallet</button>
+      <input class="eth-amount" id="ethAmount" type="number" placeholder="Enter ETH Amount (in Wei)" />
+      <button class="contribute-btn" id="contribute">Contribute ETH</button>
+      <p id="status"></p>
+
+      <div class="info">
+        <p id="monsterName">Monster Name: Egg</p> <!-- Initial monster name -->
+        <p id="currentLevel">Current Level: 0</p> <!-- Initial level -->
+        <p id="nextLevelCost">Next Level Cost: 1 ETH</p> <!-- Initial next level cost -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.0.0/dist/ethers.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
